@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Sinh Tung </title>
+
+    
+    <!-- bootstrap 4 CDN -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="sticky.css">
+
+<!-- Below is Google font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+<!-- CDM link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    nav{
+      position: fixed;
+      width: 100%;
+
+      
+    }
+
+  nav ul{
+    list-style: none;
+    background: rgba(0,0,0,0);
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    transition: 1s;
+  }
+  nav.black ul{
+    background: #000;
+  }
+  nav ul li{
+    display: inline-block;
+    padding: 8px;
+  }
+  nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+
+    h1
+    { font-size: 300%;
+     color: white;
+     text-align: center;
+     font-family: 'Bebas Neue', cursive;
+     padding-bottom: 20px}
+    h2
+    {font-size: 200%;
+      color: gray;
+    font-family: 'Bebas Neue', cursive;}
+    h4
+    {font-size: 34px;
+      color: #aaaaaa;
+    font-family: 'Mrs Saint Delafield', cursive;}
+
+     p
+     {font-size: 100%;
+      color: white;
+     font-family: 'Open Sans Condensed', sans-serif;}
+     a
+     {font-size: 13px}
+
+     /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 650px;
+  }
+
+
+  .footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0C0C0C;
+  color: Ghostwhite;
+  text-align: center;
+}
+
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  }
+  .fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+article {
+  display: grid;
+  place-content: center;
+  min-height: 10vh;
+  overflow: hidden;
+}
+
+.w {
+  width: 70vmin;
+  height: 80vmin;
+}
+
+.ts {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  --barH: 10%; /*active zone height = 100% - barH*/
+}
+
+.t {
+  --w: 20%;
+  display: block;
+  width: var(--w);
+  height: var(--barH);
+  position: absolute;
+  bottom: 0;
+  left: var(--l);
+  transform-origin: ;
+}
+
+.t img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(0.8);
+}
+
+[type="radio"] {
+  display: none;
+}
+
+:checked + label.t {
+  left: 0;
+  bottom: var(--barH);
+  height: calc(110% - var(--barH));
+}
+
+:checked + label.t img {
+  object-fit: contain;
+}
+
+/* 
+optional
+*/
+
+.ts {
+  /*thumbnails bar*/
+  perspective: 200px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.ts:after {
+  /*the plate*/
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.1));
+  transform: rotateX(90deg) scaleX(1.2);
+  transform-origin: bottom center;
+}
+
+:not(:checked) + .t {
+  /*inactive labels*/
+  transform: translate3d(0, 0, -5px);
+  pointer-events: auto;
+}
+
+:not(:checked) + .t:hover {
+  transform: translate3d(0, -7px, -5px);
+  box-shadow: 0 30px 30px -25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+:not(:checked) + .t img {
+  transform: scale(0.8); /*create gaps*/
+}
+
+:checked + .t {
+  /*active label*/
+  box-shadow: 0 0 0 transparent;
+  animation: anim 2s 1;
+  transform: scale(100%);
+}
+@keyframes anim {
+  from {
+    transform: rotateY(6deg) rotateX(3deg);
+  }
+}
+
+/* 
+transitions
+*/
+.t {
+  /*active->inactive & hover->rest*/
+  transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s;
+}
+.t:hover,
+:checked + .t {
+  transition: transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
+}
+
+
+
+  </style>
+  </head>
+
+  <!-- Below is body content -->
+
+  <body style="background-color: #0C0C0C">
+   
+
+    <!-- Below is NAV BAR -->
+    <div style="padding-right: 100px">
+      <nav class="navbar navbar-expand-sm fixed-top bg-black navbar-dark">
+  <!-- Brand/logo -->
+
+  
+  <a style="padding-left: 435px;" class="navbar-brand mr-auto" href="#">
+    <img src="Code image/logo.png" style="width:80px;">
+  </a>
+  <!-- Links -->
+  <div style="padding-right: 500px">
+  <ul class="navbar-nav mr-auto " style="padding-left: 00px;">
+    <li class="nav-item">
+      <a class="nav-link" href="task2.4.html">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="about me 1.html">ABOUT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="gallery 1.html">GALLERY</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="contact me1.html">CONTACT</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="blog 1.html">BLOG</a>
+    </li>
+  </ul>
+  </div>
+ 
+     </nav>
+     </div>
+
+      <!-- NAV BAR end here -->
+
+      
+
+<article style="padding-top: 80px" >
+  <div style="padding-top: 0px">
+        <h1>
+          MY GALLERY
+        </h1>
+      </div>
+      <br>
+      <br>
+     <div class="w">
+  <div class="ts">
+    <input type="radio" id="c1" name="ts" checked="checked"/>
+    <label class="t" for="c1"><img src="Code image/DSC_7797.png"/></label>
+    <input type="radio" id="c2" name="ts"/>
+    <label class="t" for="c2"><img src="Code image/c4.jpg"/></label>
+    <input type="radio" id="c3" name="ts"/>
+    <label class="t" for="c3"><img src="Code image/c7.PNG"/></label>
+    <input type="radio" id="c4" name="ts"/>
+    <label class="t" for="c4"><img src="Code image/DSC_7803.png"/></label>
+    <input type="radio" id="c5" name="ts"/>
+    <label class="t" for="c5"><img src="Code image/c5.png"/></label>
+    <input type="radio" id="c6" name="ts"/>
+    <label class="t" for="c6"><img src="Code image/c4.png"/></label>
+  </div>
+</div>
+
+   
+    </article>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+     <script>
+
+      $(window).scroll(function(){
+        if($(window).scrollTop()){
+          $("nav").addClass("black");
+        }
+        else{
+            $("nav").removeClass("black");
+        }
+      });
+      
+</script>
+
+<script>
+  const els = document.querySelectorAll("[type='radio']");
+for (const el of els)
+  el.addEventListener("input", e => reorder(e.target, els));
+reorder(els[0], els);
+
+function reorder(targetEl, els) {
+  const nItems = els.length;
+  let processedUncheck = 0;
+  for (const el of els) {
+    const containerEl = el.nextElementSibling;
+    if (el === targetEl) {//checked radio
+      containerEl.style.setProperty("--w", "100%");
+      containerEl.style.setProperty("--l", "0");
+    }
+    else {//unchecked radios
+      containerEl.style.setProperty("--w", `${100/(nItems-1)}%`);
+      containerEl.style.setProperty("--l", `${processedUncheck * 100/(nItems-1)}%`);
+      processedUncheck += 1;
+    }
+  }
+}
+
+</script>
+
+<div class="footer" style="position:relative;">
+  <br>
+
+  <h6>Copyright 2021</h6>
+  <a href="https://www.facebook.com/ngosinhtung/" class="fa fa-facebook"></a>
+  <a href="https://www.linkedin.com/in/sinh-tùng-ab61751b9/" class="fa fa-linkedin"></a>
+  <a href="https://www.youtube.com/channel/UCybBtWfKtGXTAtgrZZYQqRw" class="fa fa-youtube"></a>
+<a href="https://www.instagram.com/s.i.n.h.t.u.n.g/" class="fa fa-instagram"></a>
+<br>
+<br>
+</div>
+
+
+  </body>
+
+  </html>
